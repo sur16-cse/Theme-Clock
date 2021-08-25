@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+:root{
+    --primary-color:black;
+    --secondary-color:white;
+}
+
+html{
+    transition: 0.5s ease-in;
+}
+
+html.dark{
+    --primary-color:white;
+    --secondary-color:black;
+}
+
+html.dark{
+    background-color: black;
+    color:var(--primary-color)
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+
+.toggle{
+    background-color: var(--primary-color);
+    color:var(--secondary-color);
+    border-radius: 4px;
+    border:0;
+    padding: 8px 12px;
+    position: absolute;
+    top:50px;
+    cursor: pointer;
+}
+
+.toggle:focus{
+    outline: none;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clock{
+    height: 150px;
+    width: 150px;
+    position: relative;
+}
+
+.needle{
+    background-color: var(--primary-color);
+    position: absolute;
+    top:50%;
+    left: 50%;
+    height: 45px;
+    width:3px;
+    transform-origin: bottom center;
+    transition: all 0.5s ease-in;
+}
+
+.needle#hour{
+    transform: translate(-50%,-100%) rotate(0deg);
+}
+.needle#minute{
+    transform: translate(-50%,-100%) rotate(0deg);
+    height: 75px;
+}
+
+.needle#second{
+    transform: translate(-50%,-100%) rotate(0deg);
+    height: 75px;
+    background-color: coral;
+}
+
+.center{
+    background-color: coral;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+.center::after {
+    content: ' ';
+    background-color:var(--primary-color);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+.time{
+    font-size: 60px;
+}
+
+.date .circle{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    height:18px;
+    width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+    font-size: 12px;
+    transition: all 0.5s ease-in;
+}
+
